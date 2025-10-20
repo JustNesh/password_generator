@@ -14,7 +14,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  min-height: 720px;
+  height: 100vh;
+
 }
 
 #main-container{
@@ -198,6 +200,7 @@ for info on this: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_c
 @media screen and (max-device-width: 800px)  {
   body{
     height: auto;
+    min-height: fit-content;
   }
 
   h1{
