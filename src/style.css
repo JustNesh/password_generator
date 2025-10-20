@@ -1,0 +1,236 @@
+@font-face {
+  font-family: "KarlaBold";
+  src: url("/src/Karla-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Open-Sans";
+  src: url("/src/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+body{
+  margin: 0;
+  background-image: linear-gradient( to right,#34D399, #A78BFA);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#main-container{
+  width: fit-content;
+  height: fit-content;
+  background-color: #1F2937;
+}
+
+#inner-container{
+  padding: 40px 60px 0 60px;
+}
+
+h1{
+  text-align: center;
+  font-family: 'KarlaBold';
+  color: white;
+  font-size: 36px;
+}
+
+#h1-span{
+  color: #4ADF86;
+  display: block;
+}
+
+#tagline{
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  margin: 2% 0;
+  font-style: italic;
+  font-family: "Open-Sans";
+  font-weight: lighter;
+}
+
+#options-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inner-options-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: relative;
+}
+
+#range-el{
+  margin-top: 15px;
+  width: 200px;
+}
+
+label{
+  margin: 10px 0 0 45px;
+  color: white;  
+  font-size: 14px;
+  font-family: "Open-Sans";
+}
+
+.checkbox-container{
+  position: relative;
+  bottom: 15px;
+  color: white;
+  font-family: "Open-Sans";
+  font-size: 14px;
+}
+
+
+#gen-button{
+  display: block;
+  font-family: "Open-Sans";
+  background-color: #10B981;
+  color: white;
+  border: none;
+  margin: 10px auto 0 auto;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+#gen-button:hover{
+  box-shadow: 0px 0px 7.5px white;
+  background-color: #10aa77;
+}
+
+.divider{
+  margin: 40px 0 25px 0;
+  display: block;
+  height: 3px;
+  background-color: #273549;
+}
+
+#grid-passwords{
+  display: grid;
+  justify-content: space-between;
+  gap: 20px 20px;
+  grid-template-columns: auto auto;
+  margin: 0 0 40px 0;
+}
+
+.password-container{
+  text-align: center;
+  min-height: 25px;
+  height: fit-content;
+  max-height: 100px;
+  border-radius: 10px;
+  background-color: #273549;
+  color: #55F991;
+  min-width: 200px;
+  padding: 5px 10px 10px 10px;
+  transition: all .5s ease;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+
+.password-container:hover{
+  box-shadow: 0px 0px 5px white;
+  background-color: #2e3f579c;
+}
+
+.password{
+  margin-top: 5px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+/* Tooltip for the Buttons
+for info on this: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_copy_clipboard2
+*/
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext{
+  font-size: 13px;
+  visibility: hidden;
+  width: 100px;
+  background-color: white;
+  color: #273549;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 55%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after{
+  content:"";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: azure transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Set Styles */
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex{
+  display: flex;
+}
+
+@media screen and (max-device-width: 800px)  {
+  body{
+    height: auto;
+  }
+
+  h1{
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #tagline{
+    text-align: center;
+  }
+
+  #range-el{
+    margin-top: 40px;
+    width: 170px;
+  }
+  
+  label{
+    margin: 10px 0 0 30px;
+  }
+
+  .checkbox-container{
+    margin: 0 25px;
+  }
+
+  #grid-passwords{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
+  .password-container{
+    max-width: 300px;
+  }
+}

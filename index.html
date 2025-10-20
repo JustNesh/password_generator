@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="inner-container">
+        <h1>Generate a <span id="h1-span">random password</span></h1>
+        <p id="tagline">Never use an insecure password again.</p>
+        <div class="divider"></div>
+        <div id="options-container">
+          <div class="inner-options-container">
+            <input type="range" min="8" max="50" value="10" id="range-el" oninput="changePasswordSizeEl()"/>
+            <label id="password-size-el">Password Size: 10</label>
+          </div>
+          <div class="column">
+            <div class="flex checkbox-container">
+              <p>Contains Numbers:</p>
+              <input type="checkbox" value="true" id="checkbox-numbers-el" onchange="checkboxChange('numbers')" checked>
+            </div>
+            <div class="flex checkbox-container">
+              <p>Contains Symbols:</p>
+              <input type="checkbox" id="checkbox-symbols-el" onchange="checkboxChange('symbols')" checked>
+            </div>
+          </div>
+        </div>
+        <button id="gen-button" onclick="displayPasswords()">Generate Passwords</button>
+        <div class="divider"></div>
+        <div id="grid-passwords">
+          <div class="password-container tooltip" onclick="copyText(0)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+          <div class="password-container tooltip" onclick="copyText(1)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+          <div class="password-container tooltip" onclick="copyText(2)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+          <div class="password-container tooltip" onclick="copyText(3)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+          <div class="password-container tooltip" onclick="copyText(4)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+          <div class="password-container tooltip" onclick="copyText(5)">
+            <span class="tooltiptext">Copy to Clipboard</span>
+            <div class="password"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
