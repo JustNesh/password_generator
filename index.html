@@ -10,9 +10,13 @@
   <body>
     <div id="main-container">
       <div id="inner-container">
-          <h1>Generate a <span id="h1-span">random password</span></h1>
-          <p id="tagline">Never use an insecure password again.</p>
+        <!-- Header -->
+         <header>
+           <h1>Generate a <span id="h1-span">random password</span></h1>
+           <p id="tagline">Never use an insecure password again.</p>
+         </header>
         <div class="divider"></div>
+        <!-- Options Area -->
         <div id="options-container">
           <div class="inner-options-container">
             <input type="range" min="8" max="50" value="10" id="range-el" oninput="changePasswordSizeEl()"/>
@@ -31,6 +35,7 @@
         </div>
         <button id="gen-button" onclick="displayPasswords()">Generate Passwords</button>
         <div class="divider"></div>
+        <!-- Passwords Section -->
         <div id="grid-passwords">
           <div class="password-container tooltip" onclick="copyText(0)">
             <span class="tooltiptext">Copy to Clipboard</span>
