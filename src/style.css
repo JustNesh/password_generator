@@ -54,6 +54,7 @@ h1{
 #options-container{
   display: flex;
   justify-content: space-evenly;
+  text-shadow: 0 0 5px black;
 }
 
 .inner-options-container{
@@ -89,6 +90,7 @@ h1{
   display: block;
   font-family: "Open-Sans";
   background-color: #10B981;
+  text-shadow: 0 0 5px black;
   color: white;
   border: none;
   margin: 10px auto 0 auto;
@@ -141,6 +143,7 @@ h1{
 }
 
 .password{
+  text-shadow: 0 0 5px black;
   margin-top: 5px;
   padding: 10px 10px;
   border-radius: 10px;
