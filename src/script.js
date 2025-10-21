@@ -109,6 +109,12 @@ passwordContainerList.forEach((passwordContainerEl,i) =>{
     passwordContainerEl.addEventListener("mouseleave",()=>{
         tooltiptext.setAttribute("aria-hidden", "true")
     })
+
+    passwordContainerEl.addEventListener("keydown",(e)=>{
+        if (e.key === "Enter" || e.key === " ") {
+            copyText(i);
+        }
+    })
 })
 
 

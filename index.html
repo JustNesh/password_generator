@@ -20,48 +20,48 @@
         <form>
           <div id="options-container">
             <div class="inner-options-container">
-              <input type="range" min="8" max="50" value="10" id="range-el" oninput="changePasswordSizeEl()"/>
+              <input tabindex="0" type="range" min="8" max="50" value="10" id="range-el" oninput="changePasswordSizeEl()"/>
               <label for="range-el" id="password-size-el">Password Size: 10</label>
             </div>
             <div class="column">
               <div class="flex checkbox-container">
                 <label for="checkbox-numbers-el">Contains Numbers:</label>
-                <input type="checkbox" id="checkbox-numbers-el" onchange="checkboxChange('numbers')" checked>
+                <input tabindex="0" type="checkbox" id="checkbox-numbers-el" onchange="checkboxChange('numbers')" checked>
               </div>
               <div class="flex checkbox-container">
                 <label for="checkbox-symbols-el">Contains Symbols:</label>
-                <input type="checkbox" id="checkbox-symbols-el" onchange="checkboxChange('symbols')" checked>
+                <input tabindex="0" type="checkbox" id="checkbox-symbols-el" onchange="checkboxChange('symbols')" checked>
               </div>
             </div>
           </div>
         </form>
-        <button id="gen-button" onclick="displayPasswords()">Generate Passwords</button>
+        <button tabindex="0" id="gen-button" onclick="displayPasswords()">Generate Passwords</button>
         <div class="divider"></div>
         <!-- Passwords Section -->
         <div id="grid-passwords">
           <div class="password-container tooltip" onclick="copyText(0)">
             <span role="tooltip" id="password-1" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-1" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-1" ></div>
           </div>
           <div class="password-container tooltip" onclick="copyText(1)">
             <span role="tooltip" id="password-2" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-2" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-2" ></div>
           </div>
           <div class="password-container tooltip" onclick="copyText(2)">
             <span role="tooltip" id="password-3" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-3" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-3" ></div>
           </div>
           <div class="password-container tooltip" onclick="copyText(3)">
             <span role="tooltip" id="password-4" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-4" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-4" ></div>
           </div>
           <div class="password-container tooltip" onclick="copyText(4)">
             <span role="tooltip" id="password-5" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-5" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-5" ></div>
           </div>
           <div class="password-container tooltip" onclick="copyText(5)">
             <span role="tooltip" id="password-6" class="tooltiptext">Copy to Clipboard</span>
-            <div class="password" aria-describedby="password-6" ></div>
+            <div tabindex="0" class="password" aria-describedby="password-6" ></div>
           </div>
         </div>
       </div>
