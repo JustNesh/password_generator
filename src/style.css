@@ -68,21 +68,22 @@ h1{
   width: 200px;
 }
 
-label{
-  margin: 10px 0 0 45px;
+#password-size-el{
+  margin: 10px 0 0 47px;
   color: white;  
   font-size: 14px;
   font-family: "Open-Sans";
 }
 
 .checkbox-container{
-  position: relative;
-  bottom: 15px;
+  /* position: relative; */
+  /* bottom: px; */
+  display: flex;
   color: white;
   font-family: "Open-Sans";
   font-size: 14px;
+  margin-bottom: 20px;
 }
-
 
 #gen-button{
   display: block;

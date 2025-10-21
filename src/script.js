@@ -24,6 +24,7 @@ const passwordDisplayArray = document.querySelectorAll(".password");
 const toolTipTextArray = document.querySelectorAll(".tooltiptext");
 const numbersCheckbox = document.getElementById("checkbox-numbers-el");
 const symbolsCheckbox = document.getElementById("checkbox-symbols-el");
+const passwordContainerList = document.querySelectorAll(".password-container");
 
 //Starting values from HTML Doc
 let passwordSize = Number(rangeEl.value)
@@ -39,17 +40,9 @@ function changePasswordSizeEl(){
 
 function checkboxChange(name){
     if (name === "numbers"){
-        if(numbersCheckbox.checked){
-            isNumbersChecked = true;
-            return
-        }
-        isNumbersChecked = false;
+        isNumbersChecked = numbersCheckbox.checked;
     } else{
-        if(symbolsCheckbox.checked){
-            isSymbolsChecked = true;
-            return
-        }
-        isSymbolsChecked = false;
+        isSymbolsChecked = symbolsCheckbox.checked;
     }
 }
 
@@ -104,6 +97,20 @@ function copyText(i){
     toolTipTextArray[i].textContent = "Password Copied!"
     navigator.clipboard.writeText(elToCopy.textContent)
 }
+
+//Adding Event Listeners for Aria Accessibility
+
+passwordContainerList.forEach((passwordContainerEl,i) =>{
+    const tooltiptext = toolTipTextArray[i];
+    passwordContainerEl.addEventListener("mouseenter",()=>{
+        tooltiptext.setAttribute("aria-hidden", "false")
+    })
+
+    passwordContainerEl.addEventListener("mouseleave",()=>{
+        tooltiptext.setAttribute("aria-hidden", "true")
+    })
+})
+
 
 //To get this to work in VITE and production
 window.displayPasswords = displayPasswords;
