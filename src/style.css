@@ -131,13 +131,13 @@ h1{
   color: #55F991;
   min-width: 200px;
   padding: 5px 10px 10px 10px;
-  transition: all .5s ease;
+  transition: all .2s ease;
   cursor: pointer;
   word-wrap: break-word;
   max-width: 300px
 }
 
-.password-container:hover{
+.password-container:hover {
   box-shadow: 0px 0px 5px white;
   background-color: #2e3f579c;;
 }
@@ -147,6 +147,10 @@ h1{
   margin-top: 5px;
   padding: 10px 10px;
   border-radius: 10px;
+}
+
+.password:focus{
+  outline: none;  
 }
 
 
@@ -170,7 +174,7 @@ for info on this: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_c
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 55%;
+  left: 52.5%;
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -187,11 +191,11 @@ for info on this: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_c
   border-color: azure transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext{
+/* .tooltip:hover .tooltiptext{
   visibility: visible;
-  opacity: 1;
-}
-
+  opacity: .90;
+  left: 52.5%;
+} */
 /* Set Styles */
 
 .column{

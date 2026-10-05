@@ -25,11 +25,13 @@ const toolTipTextArray = document.querySelectorAll(".tooltiptext");
 const numbersCheckbox = document.getElementById("checkbox-numbers-el");
 const symbolsCheckbox = document.getElementById("checkbox-symbols-el");
 const passwordContainerList = document.querySelectorAll(".password-container");
+const focusPasswordList = document.querySelectorAll(".password-container .password")
 
 //Starting values from HTML Doc
 let passwordSize = Number(rangeEl.value)
 let isNumbersChecked = true;
 let isSymbolsChecked = true;
+let hasButtonBeenPressed = false;
 
 //Functions
 function changePasswordSizeEl(){
@@ -48,6 +50,7 @@ function checkboxChange(name){
 
 function generatePassword(){
     let result = "";
+    hasButtonBeenPressed = true;
     if (isNumbersChecked === true && isSymbolsChecked === true){
         for (let i=0; i<passwordSize; i++){
             result+= characters[Math.floor(Math.random() * characters.length)]
@@ -79,6 +82,7 @@ function generateMultplePasswords(length){
 function setTooltipToDefault(){
     for(let j=0; j<toolTipTextArray.length; j++){
         toolTipTextArray[j].textContent = "Copy to Clipboard"
+        closeToolTip(j)
     }
 }
 
@@ -96,25 +100,67 @@ function copyText(i){
     setTooltipToDefault()
     toolTipTextArray[i].textContent = "Password Copied!"
     navigator.clipboard.writeText(elToCopy.textContent)
+    showToolTip(i)
 }
 
+function focusHighlight(i){
+    if(hasButtonBeenPressed === true){
+        passwordContainerList[i].style.boxShadow = "0px 0px 5px white";
+        passwordContainerList[i].style.backgroundColor = "#2e3f579c";
+    }
+}
+
+function loseFocus(i){
+    if(hasButtonBeenPressed === true){
+        passwordContainerList[i].style.boxShadow = "none";
+        passwordContainerList[i].style.backgroundColor = "#273549";
+    }
+}
+
+function showToolTip(i){
+    if(hasButtonBeenPressed === true){
+        toolTipTextArray[i].style.visibility = "visible";
+        toolTipTextArray[i].style.opacity = "1";
+    }
+}
+
+function closeToolTip(i){
+    toolTipTextArray[i].style.visibility = "hidden";
+    toolTipTextArray[i].style.opacity = "0";
+    toolTipTextArray[i].textContent = "Copy to Clipboard"
+}
 //Adding Event Listeners for Aria Accessibility
 
 passwordContainerList.forEach((passwordContainerEl,i) =>{
     const tooltiptext = toolTipTextArray[i];
     passwordContainerEl.addEventListener("mouseenter",()=>{
         tooltiptext.setAttribute("aria-hidden", "false")
+        showToolTip(i)
     })
 
     passwordContainerEl.addEventListener("mouseleave",()=>{
         tooltiptext.setAttribute("aria-hidden", "true")
+        closeToolTip(i)
     })
+})
 
-    passwordContainerEl.addEventListener("keydown",(e)=>{
-        if (e.key === "Enter" || e.key === " ") {
-            copyText(i);
-        }
+focusPasswordList.forEach((focusPasswordEl, i)=>{
+    const tooltiptext = toolTipTextArray[i];
+    focusPasswordEl.addEventListener("focus",()=>{
+        tooltiptext.setAttribute("aria-hidden", "false")
+        showToolTip(i)
+        focusHighlight(i)
     })
+    focusPasswordEl.addEventListener("blur",()=>{
+        tooltiptext.setAttribute("aria-hidden", "true")
+        closeToolTip(i)
+        loseFocus(i)
+    })
+    focusPasswordEl.addEventListener("keydown",(e)=>{
+        if (e.key === "Enter" || e.key === " ") {
+            copyText(i,true);
+        }
+})
 })
 
 
